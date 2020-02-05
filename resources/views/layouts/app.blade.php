@@ -56,17 +56,17 @@
                     </li>
                     <h3 class="menu-title">Elementos</h3><!-- /.menu-title -->
                     <li>
-                        <a href="{{route('tiendas.index')}}"> <i class="menu-icon fa fa-table"></i>Documentos recientes </a>
+                        <a href="{{route('documentos.index')}}"> <i class="menu-icon fa fa-table"></i>Documentos recientes </a>
                     </li>
                     <li>
-                        <a href="{{'posts'}}"> <i class="menu-icon fa fa-file-text"></i>Dcumentos Historicos </a>
+                        <a href="{{route('documentos.index')}}"> <i class="menu-icon fa fa-file-text"></i>Dcumentos Historicos </a>
                     </li>
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Gestionar Documentos</a>
                         <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon fa fa-folder"></i><a href="{{route('categoria_insumos.index')}}">Categorias</a></li>
-                        <li><i class="menu-icon fa fa-gear"></i><a href="{{route('insumos.index')}}">Listar Documentos</a></li>
-                        
+                        <li><i class="menu-icon fa fa-folder"></i><a href="{{route('documentos.index')}}">Categorias</a></li>
+                        <li><i class="menu-icon fa fa-gear"></i><a href="{{route('documentos.index')}}">Listar Documentos</a></li>
+
                         </ul>
                     </li>
 
@@ -75,8 +75,8 @@
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-users"></i>Personal</a>
                         <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon fa fa-user"></i><a href="{{route('usersrol.index')}}">Gestionar Usuario</a></li>
-                            
+                        <li><i class="menu-icon fa fa-user"></i><a href="{{route('documentos.index')}}">Gestionar Usuario</a></li>
+
                         </ul>
                     </li>
 
