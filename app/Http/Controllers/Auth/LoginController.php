@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Auth;
 
 class LoginController extends Controller
 {
@@ -42,23 +43,11 @@ class LoginController extends Controller
     {
         switch(Auth::user()->rol_id){
             case 1:
-                    $this->redirectTo = '/mccb';
+                    $this->redirectTo = '/usuario';
                 return $this->redirectTo;
                 break;
             case 2:
-                    $this->redirectTo = '/cajero';
-                return $this->redirectTo;
-                break;
-            case 3:
-                $this->redirectTo = '/recepcion';
-                return $this->redirectTo;
-                break;
-            case 4:
-                    $this->redirectTo = '/elaborador';
-                return $this->redirectTo;
-                break;
-            case 5:
-                $this->redirectTo = '/supervisor';
+                    $this->redirectTo = '/admin';
                 return $this->redirectTo;
                 break;
             default:

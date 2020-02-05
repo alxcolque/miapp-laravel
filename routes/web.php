@@ -20,11 +20,8 @@ Route::get('/recipe', function () {
 Route::get('cesta', 'ClienteWebController@cesta');
 
 Auth::routes();
-Route::get('/mccb', 'ClienteWebController@index')->name('cliente')->middleware('clienteweb');
-Route::get('/cajero', 'CajeroController@index')->name('cajero')->middleware('cajero');
-Route::get('/recepcion', 'RecepcionController@index')->name('recepcion')->middleware('recepcion');
-Route::get('/elaborador', 'ElaboradorController@index')->name('elaborador')->middleware('elaborador');
-Route::get('/supervisor', 'SupervisorController@index')->name('supervisor')->middleware('supervisor');
+Route::get('/usuario', 'UsuarioController@index')->name('usuario')->middleware('usuariok');
+Route::get('/admin', 'AdminController@index')->name('admin')->middleware('admink');
 
 
 //Route::get('/home', 'HomeController@index')->name('home');

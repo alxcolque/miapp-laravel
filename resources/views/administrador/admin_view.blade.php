@@ -5,7 +5,7 @@
 
   <ol class="breadcrumb">
     <li class="breadcrumb-item">
-      <a href="{{route('')}}">Dashboard</a>
+      <a href="{{route('admin')}}">Dashboard</a>
     </li>
     <li class="breadcrumb-item active">Supervisor</li>
   </ol>
