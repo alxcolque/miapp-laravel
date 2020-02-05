@@ -55,30 +55,18 @@
                         <a href="{{route('usuario')}}"> <i class="menu-icon fa fa-dashboard"></i>Principal </a>
                     </li>
                     <h3 class="menu-title">Elementos</h3><!-- /.menu-title -->
+                    <li>
+                        <a href="{{route('tiendas.index')}}"> <i class="menu-icon fa fa-table"></i>Documentos recientes </a>
+                    </li>
+                    <li>
+                        <a href="{{'posts'}}"> <i class="menu-icon fa fa-file-text"></i>Dcumentos Historicos </a>
+                    </li>
                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Insumos</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Gestionar Documentos</a>
                         <ul class="sub-menu children dropdown-menu">
                         <li><i class="menu-icon fa fa-folder"></i><a href="{{route('categoria_insumos.index')}}">Categorias</a></li>
-                        <li><i class="menu-icon fa fa-gear"></i><a href="{{route('insumos.index')}}">Listar Insumos</a></li>
-                        <li><i class="menu-icon fa fa-folder-open"></i><a href="{{route('insumos_stocks.index')}}">Stock Insumos</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="{{route('tiendas.index')}}"> <i class="menu-icon fa fa-money"></i>Tiendas </a>
-                    </li>
-                    <li>
-                        <a href="{{'posts'}}"> <i class="menu-icon fa fa-file-text"></i>Blogs </a>
-                    </li>
-                    <li>
-                        <a href="#"> <i class="menu-icon fa fa-table"></i>Contactos </a>
-                    </li>
-                    <h3 class="menu-title">Menus</h3><!-- /.menu-title -->
-
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-list-ul"></i>Menu</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-plus-square-o"></i><a href="{{'catmenus'}}">Tipo</a></li>
-                            <li><i class="menu-icon fa fa-check-square"></i><a href="{{'menus'}}">Menu Burger</a></li>
+                        <li><i class="menu-icon fa fa-gear"></i><a href="{{route('insumos.index')}}">Listar Documentos</a></li>
+                        
                         </ul>
                     </li>
 
@@ -87,11 +75,8 @@
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-users"></i>Personal</a>
                         <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon fa fa-user"></i><a href="{{route('usersrol.index')}}">Listado del Personal</a></li>
-                            <!--<li><i class="menu-icon fa fa-user"></i><a href="font-themify.html">Meseros</a></li>
-                            <li><i class="menu-icon fa fa-user"></i><a href="font-fontawesome.html">Cajeros</a></li>
-                            <li><i class="menu-icon fa fa-user"></i><a href="font-themify.html">Recepción</a></li>
-                            <li><i class="menu-icon fa fa-user"></i><a href="font-fontawesome.html">Elaborador</a></li>-->
+                        <li><i class="menu-icon fa fa-user"></i><a href="{{route('usersrol.index')}}">Gestionar Usuario</a></li>
+                            
                         </ul>
                     </li>
 
@@ -194,7 +179,7 @@
                 <div class="col-sm-5">
                     <div class="user-area dropdown float-right">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="user-avatar rounded-circle" src="{{asset('admin/images/admin.jpg')}}" alt="User Avatar"><span class="caret">{{ Auth::user()->name }}</span>
+                            <img class="user-avatar rounded-circle" src="{{asset('public/admin/images/admin.jpg')}}" alt="User Avatar"><span class="caret">{{ Auth::user()->name }}</span>
                         </a>
 
 
