@@ -5,7 +5,7 @@
 
   <ol class="breadcrumb">
     <li class="breadcrumb-item">
-      <a href="#">Dashboard</a>
+      <a href="{{route('documentos.index')}}">Dashboard</a>
     </li>
     <li class="breadcrumb-item active">Supervisor</li>
   </ol>
@@ -18,7 +18,7 @@
         </div>
     </div>
     <div class="col-sm-12">
-      <a href="{{route('tiendas.create')}}" class=""><button class="btn btn-block btn-primary btn-xs mb-2 mr-2" style="width: 100px">Agregar</button></a>
+      <a href="{{route('documentos.create')}}" class=""><button class="btn btn-block btn-primary btn-xs mb-2 mr-2" style="width: 100px">Agregar</button></a>
     </div>
     <!--/.col-->
     <div class="card mb-3">
@@ -31,12 +31,34 @@
               <thead><tr class="text-black text-center">
                 <th>ID</th>
                 <th>Documentos</th>
-                <th>fecha</th>
-                <th>Formato</th>
+                <th>Descripcion</th>
+                <th>Fecha</th>
+                <th>url</th>
+                <th>Tipo</th>
+                <th>Usuario</th>
                 <th>Accion</th>
               </tr></thead>
               <tbody>
-                
+              @foreach ($InsStockInf as $r)
+                      <tr>
+                      <td>{{$r->nombre}}</td>
+                      <td>{{$r->descripcion}}</td>
+                      <td>{{$r->fecha_alta}}</td>
+                      <td>{{$r->url}}</td>
+                      <td>{{$r->FInsDocumento_ToTipo->nombre}}</td>
+                      <td>{{$r->FInsDocumento_ToUsuario->nombre}}</td>
+                      <td>
+                        <div class="float-left">
+                        <a href="{{route('documentos.edit',$r->id)}}"><i class="btn btn-block btn-secondary fa fa-edit"></i></a>
+                            <form  action="{{route('documentos.destroy',$r->id)}}" method="POST">
+                              {!!method_field('DELETE')!!}
+                              @csrf
+                              <a><button class="btn btn-block btn-danger btn fa fa-trash"></button></a>
+                            </form>
+                          </div>
+                        </td>
+                      </tr>
+                @endforeach
             </tbody>
           </table>
         </div>

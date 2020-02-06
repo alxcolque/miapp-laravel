@@ -7,14 +7,10 @@ use Illuminate\Http\Request;
 
 class DocumentosController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        return view('documento.index');
+        $InsStockInf=Documento::all();
+        return view('documento.index',compact('InsStockInf'));
     }
 
     /**
@@ -24,7 +20,9 @@ class DocumentosController extends Controller
      */
     public function create()
     {
-        //
+        $InsInf=Insumos::all();
+        $TieInf=Tiendas::all();
+        return view('supervisor.insumos_stocks.create',compact('InsInf','TieInf'));
     }
 
     /**
@@ -35,16 +33,23 @@ class DocumentosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'ins_id'=> "required",
+            'tienda_id' => 'required',
+            'cantidad' => 'required',
+            'fecha' => 'required',
+        ]);
+        Insumos_Stocks::create($request->all());
+        return redirect()->route('insumos_stocks.index');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Documento  $documento
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Documento $documento)
+    public function show($id)
     {
         //
     }
@@ -52,34 +57,45 @@ class DocumentosController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Documento  $documento
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Documento $documento)
+    public function edit($id)
     {
-        //
+        $InsumStockEdit=Insumos_Stocks::findorfail($id);
+        $InsInf=Insumos::all();
+        $TieInf=Tiendas::all();
+        return view('supervisor.insumos_stocks.edit',compact('InsInf','TieInf','InsumStockEdit'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Documento  $documento
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Documento $documento)
+    public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'ins_id'=> "required",
+            'tienda_id' => 'required',
+            'cantidad' => 'required',
+            'fecha' => 'required',
+        ]);
+        Insumos_Stocks::findorfail($id)->update($request->all());
+        return redirect()->route('insumos_stocks.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Documento  $documento
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Documento $documento)
+    public function destroy($id)
     {
-        //
+        Insumos_Stocks::findorfail($id)->delete();
+        return redirect()->route('insumos_stocks.index');
     }
 }

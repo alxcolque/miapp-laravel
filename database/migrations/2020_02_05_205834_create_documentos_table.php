@@ -22,7 +22,6 @@ class CreateDocumentosTable extends Migration
             $table->dateTime('fecha_alta', 0);
             $table->dateTime('fecha_modificacion', 0);
             $table->string('url',50);
-            $table->integer('cantidad');
             
             $table->unsignedBigInteger('tipo_id');
             $table->unsignedBigInteger('usuario_id');
