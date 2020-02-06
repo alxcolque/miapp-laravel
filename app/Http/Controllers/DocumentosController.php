@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Tipo;
+use App\User;
 use App\Documento;
 use Illuminate\Http\Request;
 
@@ -20,9 +22,9 @@ class DocumentosController extends Controller
      */
     public function create()
     {
-        $InsInf=Insumos::all();
-        $TieInf=Tiendas::all();
-        return view('supervisor.insumos_stocks.create',compact('InsInf','TieInf'));
+        $InsInf=Tipo::all();
+        $TieInf=User::all();
+        return view('documento.create',compact('InsInf','TieInf'));
     }
 
     /**
