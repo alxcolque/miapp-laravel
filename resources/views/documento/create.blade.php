@@ -18,7 +18,7 @@
         </div>
     </div>
     <div class="d-flex flex-column mb-5 p-1 align-items-center">
-        <form action="{{route('insumos_stocks.store')}}" method="POST" class="tcolor" style="padding: 0px 50px 0px 50px">
+        <form action="{{route('documentos.store')}}" method="POST" class="tcolor" style="padding: 0px 50px 0px 50px">
         @csrf
         <p class="text-center">Registrar Documentos</p><br>
             <div class="form-group formuswidth">
