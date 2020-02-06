@@ -60,9 +60,10 @@ class TiposController extends Controller
      * @param  \App\Tipo  $tipo
      * @return \Illuminate\Http\Response
      */
-    public function edit(Tipo $tipo)
+    public function edit($id)
     {
-        //
+        $TEdit = Tipo::findorfail($id);
+        return view('documento.tipo.edit', compact('TEdit'));
     }
 
     /**
@@ -72,9 +73,14 @@ class TiposController extends Controller
      * @param  \App\Tipo  $tipo
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Tipo $tipo)
+    public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'descripcion'=> "required|max:30|unique:tipos,descripcion,$id",
+        ]);
+        Tipo::findorfail($id)->update($request->all());
+        //redireccionar
+        return redirect()->route('tipos.index');
     }
 
     /**
@@ -83,8 +89,9 @@ class TiposController extends Controller
      * @param  \App\Tipo  $tipo
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Tipo $tipo)
+    public function destroy($id)
     {
-        //
+        Tipo::findorfail($id)->delete();
+        return redirect()->route('tipos.index');
     }
 }
