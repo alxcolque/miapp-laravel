@@ -64,7 +64,7 @@
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Gestionar Documentos</a>
                         <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon fa fa-folder"></i><a href="{{route('documentos.index')}}">Categorias</a></li>
+                        <li><i class="menu-icon fa fa-folder"></i><a href="{{route('tipos.index')}}">Categorias</a></li>
                         <li><i class="menu-icon fa fa-gear"></i><a href="{{route('documentos.index')}}">Listar Documentos</a></li>
 
                         </ul>

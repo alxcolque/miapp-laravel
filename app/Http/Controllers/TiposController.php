@@ -14,7 +14,8 @@ class TiposController extends Controller
      */
     public function index()
     {
-        //
+        $TipoI=Tipo::All();
+        return view('documento.tipo.index',compact('TipoI'));
     }
 
     /**
@@ -24,7 +25,7 @@ class TiposController extends Controller
      */
     public function create()
     {
-        //
+        return view('documento.tipo.create');
     }
 
     /**
@@ -35,7 +36,11 @@ class TiposController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'descripcion'=> "required|max:30|unique:tipos,descripcion",
+        ]);
+        Tipo::create($request->all());
+        return redirect()->route('tipos.index');
     }
 
     /**

@@ -53,3 +53,5 @@ Route::resource('usersrol','UsersRolController');
 Route::resource('ventas','VentasController');
 Route::resource('tiendas','TiendasController');
 Route::resource('documentos','DocumentosController');
+//Nuevo
+Route::resource('tipos','TiposController');
